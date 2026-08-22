@@ -68,12 +68,15 @@
 
 <script>
 const TOTAL_PAGES = 76;
-let current = 1;
+const params = new URLSearchParams(window.location.search);
+let current = parseInt(params.get('p'), 10) || 1;
+if (current < 1 || current > TOTAL_PAGES) current = 1;
 const img = document.getElementById('pageImg');
 const counter = document.getElementById('pageCounter');
 const slider = document.getElementById('pageSlider');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
+const contactLink = document.querySelector('.contact-band a');
 
 function pad(n) { return String(n).padStart(2, '0'); }
 
@@ -81,6 +84,18 @@ function preload(n) {
   if (n < 1 || n > TOTAL_PAGES) return;
   const p = new Image();
   p.src = `img/catalogo/pagina-${pad(n)}.jpg`;
+}
+
+function updateURL() {
+  const url = new URL(window.location.href);
+  url.searchParams.set('p', current);
+  window.history.replaceState({}, '', url);
+}
+
+function updateContact() {
+  if (!contactLink) return;
+  const msg = `Hola, vi el catálogo (página ${current} de ${TOTAL_PAGES}) y me interesa:\n${window.location.href}`;
+  contactLink.href = `https://wa.me/5212281542154?text=${encodeURIComponent(msg)}`;
 }
 
 function render() {
@@ -92,6 +107,8 @@ function render() {
   nextBtn.disabled = current === TOTAL_PAGES;
   preload(current + 1);
   preload(current - 1);
+  updateURL();
+  updateContact();
 }
 
 function goTo(n) {

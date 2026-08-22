@@ -47,10 +47,10 @@ nav.main-nav a.active { border-bottom: 1px solid var(--ink); padding-bottom: 2px
 
 /* hero */
 .hero-photo {
-  height: 62vh;
-  min-height: 420px;
-  background-color: var(--wine);
-  background-size: contain;
+  aspect-ratio: 1.7 / 1;
+  min-height: 380px;
+  max-height: 680px;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -305,6 +305,6 @@ nav.main-nav a.active { border-bottom: 1px solid var(--ink); padding-bottom: 2px
   .flipbook { gap: 8px; }
   .flip-arrow { width: 36px; height: 36px; }
   .hero-photo-name .mark { font-size: 40px; }
-  .hero-photo { height: 50vh; min-height: 340px; }
+  .hero-photo { min-height: 300px; }
   .contact-band { flex-direction: column; padding: 32px 24px; }
 }

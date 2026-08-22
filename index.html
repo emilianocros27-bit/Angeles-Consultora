@@ -120,6 +120,12 @@ expToggle.addEventListener('click', () => {
   const open = expContent.classList.toggle('open');
   expToggle.setAttribute('aria-expanded', open);
 });
+
+const contactLink = document.querySelector('.contact-band a');
+if (contactLink) {
+  const msg = `Hola, vi esta página y me interesa:\n${window.location.href}`;
+  contactLink.href = `https://wa.me/5212281542154?text=${encodeURIComponent(msg)}`;
+}
 </script>
 
 </body>
