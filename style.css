@@ -47,6 +47,7 @@ nav.main-nav a.active { border-bottom: 1px solid var(--ink); padding-bottom: 2px
 
 /* hero */
 .hero-photo {
+  width: 100%;
   aspect-ratio: 1.7 / 1;
   min-height: 380px;
   max-height: 680px;
