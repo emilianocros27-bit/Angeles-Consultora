@@ -32,33 +32,16 @@
   <h1 class="serif">Catálogo completo</h1>
 </div>
 
-<div class="tabs">
-  <button class="tab active" data-filter="all">Todos</button>
-  <button class="tab" data-filter="mk">Mary Kay</button>
-  <button class="tab" data-filter="andrea">Andrea</button>
-</div>
-
 <!-- Cada .catalog-card es un espacio para una página/foto real del catálogo.
-     Reemplaza el .img-slot con: <div class="img-slot" style="background-image:url('img/mk-01.jpg')"></div>
-     Ajusta data-brand="mk" o data-brand="andrea" según corresponda. -->
+     Reemplaza el .img-slot con: <div class="img-slot" style="background-image:url('img/mk-01.jpg')"></div> -->
 <div class="catalog-grid" id="grid">
-  <div class="catalog-card" data-brand="mk">
+  <div class="catalog-card">
     <div class="brand-tag mk">Mary Kay</div>
     <div class="img-slot"><span>Página 1</span></div>
     <a class="order-btn" href="https://wa.me/521NUMERO" target="_blank" rel="noopener">Pedir por WhatsApp</a>
   </div>
-  <div class="catalog-card" data-brand="mk">
+  <div class="catalog-card">
     <div class="brand-tag mk">Mary Kay</div>
-    <div class="img-slot"><span>Página 2</span></div>
-    <a class="order-btn" href="https://wa.me/521NUMERO" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-  </div>
-  <div class="catalog-card" data-brand="andrea">
-    <div class="brand-tag andrea">Andrea</div>
-    <div class="img-slot"><span>Página 1</span></div>
-    <a class="order-btn" href="https://wa.me/521NUMERO" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-  </div>
-  <div class="catalog-card" data-brand="andrea">
-    <div class="brand-tag andrea">Andrea</div>
     <div class="img-slot"><span>Página 2</span></div>
     <a class="order-btn" href="https://wa.me/521NUMERO" target="_blank" rel="noopener">Pedir por WhatsApp</a>
   </div>
@@ -71,19 +54,6 @@
   </div>
   <span>© 2026 Ángeles Consultora</span>
 </footer>
-
-<script>
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const filter = tab.dataset.filter;
-    document.querySelectorAll('.catalog-card').forEach(card => {
-      card.style.display = (filter === 'all' || card.dataset.brand === filter) ? '' : 'none';
-    });
-  });
-});
-</script>
 
 </body>
 </html>

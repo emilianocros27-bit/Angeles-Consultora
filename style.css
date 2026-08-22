@@ -7,7 +7,6 @@
   --line: oklch(85% 0.015 30);
   --cream: oklch(98% 0.008 60);
   --mk: oklch(55% 0.18 350);
-  --andrea: oklch(52% 0.11 175);
 }
 
 html { background: var(--cream); }
@@ -81,6 +80,27 @@ nav.main-nav a.active { border-bottom: 1px solid var(--ink); padding-bottom: 2px
   background-position: center;
 }
 .img-slot span { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+
+/* price list */
+.price-list {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 40px 64px 8px;
+}
+.price-list ul { list-style: none; }
+.price-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12.5px;
+}
+.price-list li:last-child { border-bottom: none; }
+.price-list .name { color: var(--muted); }
+.price-list .name em { font-style: normal; color: var(--mk); }
+.price-list .price { font-weight: 600; color: var(--ink); white-space: nowrap; }
 
 /* top sellers */
 .top-sellers {
@@ -166,7 +186,6 @@ nav.main-nav a.active { border-bottom: 1px solid var(--ink); padding-bottom: 2px
   padding: 12px 14px 0;
 }
 .catalog-card .brand-tag.mk { color: var(--mk); }
-.catalog-card .brand-tag.andrea { color: var(--andrea); }
 .catalog-card .order-btn {
   display: flex; align-items: center; justify-content: center; gap: 6px;
   margin: 14px; padding: 10px;
