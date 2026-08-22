@@ -151,9 +151,47 @@ nav.main-nav a.active { border-bottom: 1px solid var(--ink); padding-bottom: 2px
 .site-footer .logo .mark { font-size: 17px; }
 
 /* catalog page */
-.catalog-head { padding: 56px 64px 0; }
+.catalog-head { padding: 56px 64px 32px; }
 .catalog-head .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-.catalog-head h1 { font-size: 42px; margin: 10px 0 32px; font-style: italic; font-weight: 600; }
+.catalog-head h1 { font-size: 42px; margin: 10px 0 0; font-style: italic; font-weight: 600; }
+
+.flipbook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 24px 24px;
+}
+.flip-page {
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 520px;
+  border: 1px solid var(--line);
+  background: oklch(95% 0.01 60);
+  box-shadow: 0 24px 48px -24px oklch(20% 0.02 20 / 0.25);
+}
+.flip-page img { width: 100%; display: block; aspect-ratio: 953 / 1333; object-fit: cover; }
+.flip-arrow {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  border: 1px solid var(--line);
+  background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink);
+  cursor: pointer;
+}
+.flip-arrow:disabled { opacity: 0.3; cursor: default; }
+.flip-arrow:not(:disabled):hover { background: var(--ink); color: var(--cream); }
+
+.flip-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 24px 64px;
+}
+.flip-controls span { font-size: 12.5px; color: var(--muted); letter-spacing: 0.5px; }
+.flip-controls input[type="range"] { width: min(400px, 80vw); accent-color: var(--ink); }
 
 .tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--line); padding: 0 64px; }
 .tab {
@@ -194,6 +232,8 @@ nav.main-nav a.active { border-bottom: 1px solid var(--ink); padding-bottom: 2px
 
 @media (max-width: 520px) {
   .catalog-preview, .catalog-grid, .top-sellers-grid { grid-template-columns: 1fr; }
+  .flipbook { gap: 8px; }
+  .flip-arrow { width: 36px; height: 36px; }
   .hero .mark { font-size: 44px; }
   .contact-band { flex-direction: column; padding: 32px 24px; }
 }
