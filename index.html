@@ -42,12 +42,23 @@
 
 <section class="experience">
   <span class="eyebrow">Trayectoria</span>
-  <h2 class="serif">26 años de experiencia</h2>
-  <p>Desde julio de 2000 acompaño a mujeres a sentirse seguras y verse hermosas. Empecé como consultora de belleza en ventas y durante muchos años fui reconocida como Reina de Unidad. En 2010 di el paso a Directora, un camino que sostuve durante 13 años hasta 2023 — formando en el camino a una consultora propia hasta convertirla en Directora.</p>
-  <div class="milestones">
-    <span>3 anillos de diamante — Corte de Iniciación</span>
-    <span>Anillo de diamante en ventas 2018</span>
-    <span>Trofeo Sobre Ruedas 2018–2020</span>
+  <button class="exp-toggle" id="expToggle" aria-expanded="false">
+    <h2 class="serif">26 años de experiencia</h2>
+    <svg id="expArrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="exp-content" id="expContent">
+   <div class="exp-inner">
+    <p>Desde julio de 2000 acompaño a mujeres a sentirse seguras y verse hermosas. Empecé como consultora de belleza en ventas y durante muchos años fui reconocida como Reina de Unidad. En 2010 di el paso a Directora, un camino que sostuve durante 13 años hasta 2023 — formando en el camino a una consultora propia hasta convertirla en Directora.</p>
+    <div class="exp-photos">
+      <img src="img/abuela-carro.jpg" alt="Recibiendo el auto Mary Kay">
+      <img src="img/abuela-premio.jpg" alt="Reconocimiento Corte de Iniciación">
+    </div>
+    <div class="milestones">
+      <span>3 anillos de diamante — Corte de Iniciación</span>
+      <span>Anillo de diamante en ventas 2018</span>
+      <span>Trofeo Sobre Ruedas 2018–2020</span>
+    </div>
+   </div>
   </div>
 </section>
 
@@ -101,6 +112,15 @@
   </div>
   <span>© 2026 Ángeles Consultora</span>
 </footer>
+
+<script>
+const expToggle = document.getElementById('expToggle');
+const expContent = document.getElementById('expContent');
+expToggle.addEventListener('click', () => {
+  const open = expContent.classList.toggle('open');
+  expToggle.setAttribute('aria-expanded', open);
+});
+</script>
 
 </body>
 </html>
