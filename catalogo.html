@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo — Ángeles Consultora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Noto+Serif:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">
+    <span class="mark">Ángeles</span>
+    <span class="sub">Consultora</span>
+  </div>
+  <nav class="main-nav">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html" class="active">Catálogo</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+  <a class="btn-whatsapp" href="https://wa.me/521NUMERO" target="_blank" rel="noopener">
+    Escríbeme
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</header>
+
+<div class="catalog-head">
+  <span class="eyebrow">Agosto 2026</span>
+  <h1 class="serif">Catálogo completo</h1>
+</div>
+
+<div class="tabs">
+  <button class="tab active" data-filter="all">Todos</button>
+  <button class="tab" data-filter="mk">Mary Kay</button>
+  <button class="tab" data-filter="andrea">Andrea</button>
+</div>
+
+<!-- Cada .catalog-card es un espacio para una página/foto real del catálogo.
+     Reemplaza el .img-slot con: <div class="img-slot" style="background-image:url('img/mk-01.jpg')"></div>
+     Ajusta data-brand="mk" o data-brand="andrea" según corresponda. -->
+<div class="catalog-grid" id="grid">
+  <div class="catalog-card" data-brand="mk">
+    <div class="brand-tag mk">Mary Kay</div>
+    <div class="img-slot"><span>Página 1</span></div>
+    <a class="order-btn" href="https://wa.me/521NUMERO" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  </div>
+  <div class="catalog-card" data-brand="mk">
+    <div class="brand-tag mk">Mary Kay</div>
+    <div class="img-slot"><span>Página 2</span></div>
+    <a class="order-btn" href="https://wa.me/521NUMERO" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  </div>
+  <div class="catalog-card" data-brand="andrea">
+    <div class="brand-tag andrea">Andrea</div>
+    <div class="img-slot"><span>Página 1</span></div>
+    <a class="order-btn" href="https://wa.me/521NUMERO" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  </div>
+  <div class="catalog-card" data-brand="andrea">
+    <div class="brand-tag andrea">Andrea</div>
+    <div class="img-slot"><span>Página 2</span></div>
+    <a class="order-btn" href="https://wa.me/521NUMERO" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="logo">
+    <span class="mark">Ángeles</span>
+    <span class="sub">Consultora · [NOMBRE]</span>
+  </div>
+  <span>© 2026 Ángeles Consultora</span>
+</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter = tab.dataset.filter;
+    document.querySelectorAll('.catalog-card').forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.brand === filter) ? '' : 'none';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
